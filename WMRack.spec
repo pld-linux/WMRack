@@ -9,7 +9,7 @@ Group:		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source:		WMRack_%{version}.tar.bz2
 #Icon:		wmrack.gif
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_prefix	/usr/X11R6
 %define	_mandir	%{_prefix}/man
