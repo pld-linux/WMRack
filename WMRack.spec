@@ -6,13 +6,14 @@ Release:	3
 License:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
+Group(de):	X11/Fenstermanager/Werkzeuge
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
-Source0:	WMRack-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.gz
 #Icon:		wmrack.gif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_prefix	/usr/X11R6
-%define	_mandir	%{_prefix}/man
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 This is the second and hopefully last beta release of WMRack. It
@@ -29,7 +30,7 @@ work but need an extra (middle) button.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" \
 ./configure %{_target_platform} \
 	--prefix=%{_prefix} \
 	--mandir=%{_mandir}
@@ -40,7 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install prefix=$RPM_BUILD_ROOT%{_prefix} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 gzip -9nf README TODO WARRANTY
 
 %clean
