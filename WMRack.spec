@@ -7,7 +7,7 @@ Copyright:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
-Source:		WMRack_%{version}.tar.bz2
+Source:		WMRack-%{version}.tar.gz
 #Icon:		wmrack.gif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
