@@ -33,7 +33,7 @@ CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
 	--prefix=%{_prefix} \
 	--mandir=%{_mandir}
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
