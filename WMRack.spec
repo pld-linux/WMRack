@@ -2,7 +2,7 @@ Summary:	A WindowMaker Dock CD+Sound Applet
 Summary(pl):	Dock CD+Sound aplet do WindowMakera
 Name:		WMRack
 Version:	1.0b5
-Release:	2d
+Release:	3
 Copyright:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
@@ -12,7 +12,7 @@ Icon:		wmrack.gif
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define	_prefix	/usr/X11R6
-%define	_mandir	/usr/X11R6/man
+%define	_mandir	%{_prefix}/man
 
 %description
 This is the second and hopefully last beta release of WMRack. It
@@ -37,7 +37,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT/usr/X11R6 install
+make prefix=$RPM_BUILD_ROOT%{_prefix} install
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 gzip -9nf README TODO WARRANTY
@@ -48,10 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.gz TODO.gz WARRANTY.gz
-/usr/X11R6/GNUstep/Library/WMRack
+%{_prefix}/GNUstep/Library/WMRack
 
-%attr(755,root,root) /usr/X11R6/bin/*
-/usr/X11R6/man/man1/*
+%attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 
 %changelog
 * Tue Feb  9 1999 Micha³ Kuratczyk <kurkens@polbox.com>
