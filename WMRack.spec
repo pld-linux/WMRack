@@ -2,7 +2,7 @@ Summary:	A WindowMaker Dock CD+Sound Applet
 Summary(pl):	Dokowalny aplet CD+Sound do WindowMakera
 Name:		WMRack
 Version:	1.0b5
-Release:	3
+Release:	4
 License:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
@@ -53,7 +53,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.gz TODO.gz WARRANTY.gz
-%{_prefix}/GNUstep/Library/WMRack
+#%{_prefix}/GNUstep/Library/WMRack
+%{_libdir}/WMRack
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
