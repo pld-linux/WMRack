@@ -10,6 +10,8 @@ Source0:	http://prdownloads.sourceforge.net/wmrack/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 #Icon:		wmrack.gif
 URL:		http://wmrack.sf.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -28,34 +30,30 @@ work but need an extra (middle) button.
 WMRack zawiera funkcje miksera i odtwarzacza cdrom.
 
 Przeczytaj stronê manuala, je¿eli szukasz opisu obs³ugiwanych funkcji
-oraz jak zainstalowaæ aplet na swoim pasku przycisków (Wharf, Dock, itp).
-
+oraz jak zainstalowaæ aplet na swoim pasku przycisków (Wharf, Dock,
+itp).
 
 %prep
 %setup -q
 %patch0 -p1
 
 %build
-CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" \
-aclocal
+%{__aclocal}
 %{__autoconf}
-%configure \
-	--prefix=%{_prefix} \
-	--mandir=%{_mandir}
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README TODO WARRANTY
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README TODO WARRANTY
 #%{_prefix}/GNUstep/Library/WMRack
 %{_libdir}/WMRack
 
