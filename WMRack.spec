@@ -2,7 +2,7 @@ Summary:	A WindowMaker Dock CD+Sound Applet
 Summary(pl):	Dock CD+Sound aplet do WindowMakera
 Name:		WMRack
 Version:	1.0b5
-Release:	3
+Release:	1d
 Copyright:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
