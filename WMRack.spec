@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/GNUstep/Library/WMRack
 
 %attr(755,root,root) /usr/X11R6/bin/*
-%attr(644,root, man) /usr/X11R6/man/man1/*
+/usr/X11R6/man/man1/*
 
 %changelog
 * Tue Feb  9 1999 Micha³ Kuratczyk <kurkens@polbox.com>
