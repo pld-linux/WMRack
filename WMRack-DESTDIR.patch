@@ -1,0 +1,36 @@
+--- ./XPM/Makefile.in.org	Thu Aug  6 21:38:41 1998
++++ ./XPM/Makefile.in	Wed Dec  5 15:32:47 2001
+@@ -13,9 +13,9 @@
+ 	$(LN) grey.style standart.style
+ 
+ install:
+-	mkdir -p $(LIBDIR)
++	mkdir -p $(DESTDIR)$(LIBDIR)
+ 	for style in *.style; do \
+ 	  if test "$${style}" != "standart.style"; then \
+-	     $(INSTALL_DATA) $${style} $(LIBDIR); \
++	     $(INSTALL_DATA) $${style} $(DESTDIR)$(LIBDIR); \
+ 	  fi \
+ 	done
+--- ./Makefile.in.org	Thu Aug  6 21:38:40 1998
++++ ./Makefile.in	Wed Dec  5 15:28:56 2001
+@@ -45,15 +45,15 @@
+ install: $(TARGETS) install-bin install-man install-lib
+ 
+ install-bin:
+-	mkdir -p $(BINDIR)
++	mkdir -p $(DESTDIR)$(BINDIR)
+ 	for prog in $(TARGETS); do \
+-		$(INSTALL) $${prog} $(BINDIR) ; \
++		$(INSTALL) $${prog} $(DESTDIR)$(BINDIR) ; \
+ 	done
+ 
+ install-man:
+-	mkdir -p $(MAN1DIR)
++	mkdir -p $(DESTDIR)$(MAN1DIR)
+ 	for man in $(MANPAGES); do \
+-		$(INSTALL_DATA) $${man} $(MAN1DIR)/`basename $${man} .man`.1x ; \
++		$(INSTALL_DATA) $${man} $(DESTDIR)$(MAN1DIR)/`basename $${man} .man`.1x ; \
+ 	done
+ 
+ install-lib:
