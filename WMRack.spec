@@ -7,8 +7,8 @@ Copyright:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
-Source:		WMRack-%{version}.tar.bz2
-Icon:		wmrack.gif
+Source:		WMRack_%{version}.tar.bz2
+#Icon:		wmrack.gif
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define	_prefix	/usr/X11R6
@@ -37,7 +37,8 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT%{_prefix} install
+make install prefix=$RPM_BUILD_ROOT%{_prefix} \
+	MANDIR=$RPM_BUILD_ROOT%{_mandir}
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 gzip -9nf README TODO WARRANTY
