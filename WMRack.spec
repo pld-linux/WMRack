@@ -6,7 +6,7 @@ Release:	5
 License:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
-Source0:	http://prdownloads.sourceforge.net/wmrack/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/wmrack/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 #Icon:		wmrack.gif
 URL:		http://wmrack.sf.net/
