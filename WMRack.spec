@@ -5,7 +5,8 @@ Version:	1.0b5
 Release:	3
 Copyright:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
-Group:		X11/Applications
+Group:		X11/Window Managers/Tools
+Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source:		WMRack-%{version}.tar.bz2
 Icon:		wmrack.gif
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -50,6 +51,7 @@ make prefix=$RPM_BUILD_ROOT/usr/X11R6 install
 - added using %%{name} and %%{version} in Source,
 - changed instal prefix to /usr/X11R6
 - added LDFLAGS="-s" to ./configure enviroment,
+- changed Group to X11/Window Managers/Tools,
 - added Group(pl) and Summary(pl),
 - added %attr and %defattr macros in %files (allow build package from
   non-root account).
