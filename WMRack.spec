@@ -52,26 +52,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-
-%changelog
-* Tue Feb  9 1999 Micha³ Kuratczyk <kurkens@polbox.com>
-  [1.0b5-2d]
-- added gzipping man pages and documentation
-- removed LICENSE form %doc (GPL)
-- added %clean section
-
-* Sun Nov  1 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0b5-3]
-- added -q %setup parameter,
-- changed Buildroot to /tmp/%%{name}-%%{version}-root,
-- added using %%{name} and %%{version} in Source,
-- changed instal prefix to /usr/X11R6
-- added LDFLAGS="-s" to ./configure enviroment,
-- changed Group to X11/Window Managers/Tools,
-- added Group(pl) and Summary(pl),
-- added %attr and %defattr macros in %files (allow build package from
-  non-root account).
-
-* Thu Aug  6 1998 Oliver Graf <ograf@fga.de>
-- started changelog
-- added defines for version and release
