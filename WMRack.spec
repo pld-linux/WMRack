@@ -11,6 +11,9 @@ Source:		WMRack-%{version}.tar.bz2
 Icon:		wmrack.gif
 BuildRoot:	/tmp/%{name}-%{version}-root
 
+%define	_prefix	/usr/X11R6
+%define	_mandir	/usr/X11R6/man
+
 %description
 This is the second and hopefully last beta release of WMRack. It
 features cdrom and mixer functions. Please repeat any bugs. Compiled
@@ -28,7 +31,8 @@ still work but need an extra (middle) button.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
-	--prefix=/usr/X11R6
+	--prefix=%{_prefix}
+	--mandir=%{_mandir}
 make
 
 %install
