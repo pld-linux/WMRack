@@ -31,7 +31,7 @@ still work but need an extra (middle) button.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
-	--prefix=%{_prefix}
+	--prefix=%{_prefix} \
 	--mandir=%{_mandir}
 make
 
