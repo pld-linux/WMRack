@@ -3,11 +3,11 @@ Summary(pl):	Dock CD+Sound aplet do WindowMakera
 Name:		WMRack
 Version:	1.0b5
 Release:	3
-Copyright:	GPL
+License:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
-Source:		WMRack-%{version}.tar.gz
+Source0:	WMRack-%{version}.tar.gz
 #Icon:		wmrack.gif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -19,11 +19,11 @@ This is the second and hopefully last beta release of WMRack. It
 features cdrom and mixer functions. Please repeat any bugs. Compiled
 with extra verbose output.
 
-Read the manpage for a description of the supported functions and
-how to install the applet to your button bar (Wharf, Dock, etc...)
+Read the manpage for a description of the supported functions and how
+to install the applet to your button bar (Wharf, Dock, etc...)
 
-Sorry, styles not updated. Wait for the non-beta. Old styles
-still work but need an extra (middle) button.
+Sorry, styles not updated. Wait for the non-beta. Old styles still
+work but need an extra (middle) button.
 
 %prep
 %setup -q
