@@ -38,7 +38,7 @@ oraz jak zainstalowaæ aplet na swoim pasku przycisków (Wharf, Dock, itp).
 %build
 CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" \
 aclocal
-autoconf
+%{__autoconf}
 %configure \
 	--prefix=%{_prefix} \
 	--mandir=%{_mandir}
