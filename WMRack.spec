@@ -2,13 +2,14 @@ Summary:	A WindowMaker Dock CD+Sound Applet
 Summary(pl):	Dokowalny aplet CD+Sound do WindowMakera
 Name:		WMRack
 Version:	1.0b5
-Release:	4
+Release:	5
 License:	GPL
 Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
 Group(de):	X11/Fenstermanager/Werkzeuge
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	http://prdownloads.sourceforge.net/wmrack/%{name}-%{version}.tar.gz
+Patch0:		%{name}-DESTDIR.patch
 #Icon:		wmrack.gif
 URL:		http://wmrack.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -17,9 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		%{_prefix}/man
 
 %description
-This is the second and hopefully last beta release of WMRack. It
-features cdrom and mixer functions. Please repeat any bugs. Compiled
-with extra verbose output.
+It features cdrom and mixer functions.
 
 Read the manpage for a description of the supported functions and how
 to install the applet to your button bar (Wharf, Dock, etc...)
@@ -30,20 +29,26 @@ work but need an extra (middle) button.
 %description -l pl
 WMRack zawiera funkcje miksera i odtwarzacza cdrom.
 
+Przeczytaj stronê manuala, je¿eli szukasz opisu obs³ugiwanych funkcji
+oraz jak zainstalowaæ aplet na swoim pasku przycisków (Wharf, Dock, itp).
+
+
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" \
-./configure %{_target_platform} \
+aclocal
+autoconf
+%configure \
 	--prefix=%{_prefix} \
 	--mandir=%{_mandir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install prefix=$RPM_BUILD_ROOT%{_prefix} \
-	MANDIR=$RPM_BUILD_ROOT%{_mandir}
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf README TODO WARRANTY
 
@@ -52,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz TODO.gz WARRANTY.gz
+%doc *.gz
 #%{_prefix}/GNUstep/Library/WMRack
 %{_libdir}/WMRack
 
