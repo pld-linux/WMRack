@@ -1,5 +1,5 @@
 Summary:	A WindowMaker Dock CD+Sound Applet
-Summary(pl):	Dock CD+Sound aplet do WindowMakera
+Summary(pl):	Dokowalny aplet CD+Sound do WindowMakera
 Name:		WMRack
 Version:	1.0b5
 Release:	3
@@ -8,8 +8,9 @@ Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
 Group(de):	X11/Fenstermanager/Werkzeuge
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/wmrack/%{name}-%{version}.tar.gz
 #Icon:		wmrack.gif
+URL:		http://wmrack.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -25,6 +26,9 @@ to install the applet to your button bar (Wharf, Dock, etc...)
 
 Sorry, styles not updated. Wait for the non-beta. Old styles still
 work but need an extra (middle) button.
+
+%description -l pl
+WMRack zawiera funkcje miksera i odtwarzacza cdrom.
 
 %prep
 %setup -q
