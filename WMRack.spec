@@ -4,13 +4,12 @@ Name:		WMRack
 Version:	1.0b5
 Release:	5
 License:	GPL
-Vendor:		FGA bitart Furch & Graf GbR
 Group:		X11/Window Managers/Tools
 Source0:	http://dl.sourceforge.net/wmrack/%{name}-%{version}.tar.gz
 # Source0-md5:	0832e522a3641d74698c98e47d981de7
 Patch0:		%{name}-DESTDIR.patch
 #Icon:		wmrack.gif
-URL:		http://wmrack.sf.net/
+URL:		http://wmrack.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
