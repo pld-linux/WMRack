@@ -1,5 +1,5 @@
 Summary:	A WindowMaker Dock CD+Sound Applet
-Summary(pl):	Dokowalny aplet CD+Sound do WindowMakera
+Summary(pl.UTF-8):   Dokowalny aplet CD+Sound do WindowMakera
 Name:		WMRack
 Version:	1.0b5
 Release:	5
@@ -26,11 +26,11 @@ to install the applet to your button bar (Wharf, Dock, etc...)
 Sorry, styles not updated. Wait for the non-beta. Old styles still
 work but need an extra (middle) button.
 
-%description -l pl
+%description -l pl.UTF-8
 WMRack zawiera funkcje miksera i odtwarzacza cdrom.
 
-Przeczytaj stronê manuala, je¿eli szukasz opisu obs³ugiwanych funkcji
-oraz jak zainstalowaæ aplet na swoim pasku przycisków (Wharf, Dock,
+Przeczytaj stronÄ™ manuala, jeÅ¼eli szukasz opisu obsÅ‚ugiwanych funkcji
+oraz jak zainstalowaÄ‡ aplet na swoim pasku przyciskÃ³w (Wharf, Dock,
 itp).
 
 %prep
