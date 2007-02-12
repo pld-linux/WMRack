@@ -1,5 +1,5 @@
 Summary:	A WindowMaker Dock CD+Sound Applet
-Summary(pl.UTF-8):   Dokowalny aplet CD+Sound do WindowMakera
+Summary(pl.UTF-8):	Dokowalny aplet CD+Sound do WindowMakera
 Name:		WMRack
 Version:	1.0b5
 Release:	5
